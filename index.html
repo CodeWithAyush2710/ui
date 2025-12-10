@@ -16,17 +16,24 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img class="logo-icon" src="./assets/logo/Logo.svg" alt="Logo" > <!-- Placeholder for logo -->
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#recommendations">Recommendations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            <img src="./assets/logo/Logo.svg" alt="Logo" class="logo-icon">
+        </div>
+
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#recommendations">Recommendations</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
     </header>
 
     <!-- Main Content -->
@@ -356,17 +363,6 @@
             <p>&copy; 2024 Copyright, All Right Reserved</p>
         </div>
     </footer>
-
-    <!-- Modal -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 id="modal-title">Project Details</h2>
-            <img id="modal-image" src="" alt="Project Image">
-            <p id="modal-desc">Detailed project description goes here.</p>
-            <div class="modal-tags" id="modal-tags"></div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>

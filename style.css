@@ -27,6 +27,14 @@ body {
     color: var(--text-black);
     background-color: var(--bg-gray);
     line-height: 1.6;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -94,15 +102,15 @@ header {
     align-items: center;
     padding: 20px 80px;
     min-height: 80px;
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: 100%;
+    /* Changed from 1440px to fill screen */
+    margin: 0;
 }
 
 .logo-icon {
     height: 50px;
     width: auto;
     flex-shrink: 0;
-    padding-left: 80px auto;
 }
 
 .nav-links {
@@ -136,12 +144,14 @@ header {
     background: var(--white);
     width: 100%;
     padding: 80px 80px;
-    margin: 0 auto;
+    margin: 0;
+    /* Remove auto centering */
 }
 
 .hero .container {
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: 100%;
+    /* Changed from 1440px to fill screen */
+    margin: 0;
     padding: 0 40px;
     display: flex;
     align-items: center;
@@ -219,13 +229,21 @@ header {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 385px);
+    grid-template-columns: repeat(3, minmax(280px, 385px));
+    /* Flexible columns */
     gap: 45px;
     justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Prevent edge cutoff */
 }
 
 .project-card {
-    width: 385px;
+    width: 100%;
+    /* Fill available column width */
+    max-width: 385px;
+    /* Cap at design width */
     background: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -239,8 +257,11 @@ header {
 }
 
 .project-card img {
-    width: 385px;
-    height: 256px;
+    width: 100%;
+    /* Scale with card */
+    height: auto;
+    aspect-ratio: 385 / 256;
+    /* Maintain proportions */
     object-fit: cover;
     border-radius: 12px 12px 0 0;
 }
@@ -354,6 +375,9 @@ header {
     text-transform: capitalize;
     color: var(--text-gray);
     margin-bottom: 30px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .recommendation-card .profile {
@@ -376,6 +400,8 @@ header {
     text-transform: capitalize;
     color: var(--text-black);
     margin-bottom: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .recommendation-card .profile .info span {
@@ -384,6 +410,8 @@ header {
     line-height: 24px;
     text-transform: capitalize;
     color: var(--text-gray);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .carousel-nav {
@@ -414,8 +442,12 @@ header {
 
 .contact-layout {
     display: grid;
-    grid-template-columns: 846px 373px;
+    grid-template-columns: 2fr 1fr;
+    /* Flexible instead of fixed 846px 373px */
     gap: 35px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .contact-form-wrapper h2,
@@ -560,10 +592,13 @@ header {
 .footer-logo {
     max-width: 1400px;
     margin: 10px auto;
-
-    padding: 0 80px;
+    padding: 0 60px;
     text-align: left;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: flex-start; */
 }
 
 .footer-logo img {
@@ -577,7 +612,7 @@ header {
     display: grid;
     grid-template-columns: auto 1fr 1fr 1fr;
     gap: 120px;
-    padding: 0 98px 50px;
+    padding: 0 80px 50px;
 }
 
 .footer-col h4 {
@@ -588,6 +623,8 @@ header {
     color: #000000;
     margin-bottom: 20px;
 }
+
+
 
 .footer-col ul {
     display: flex;
@@ -644,9 +681,12 @@ header {
 .copyright {
     display: flex;
     justify-content: center;
+    /* Changed to center for desktop */
     align-items: center;
     padding: 16px 0;
-
+    position: relative;
+    gap: 40px;
+    /* Separates the text */
 }
 
 .copyright p {
@@ -660,11 +700,36 @@ header {
     color: var(--text-gray);
 }
 
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    /* Ensure above header */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-black);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 /* ================== LOGO STRIP ================== */
 .logo-strip {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 50px 80px;
+    padding: 50px 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -679,45 +744,53 @@ header {
     flex: 0 1 auto;
 }
 
-/* ================== MODAL ================== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: var(--white);
-    margin: 10% auto;
-    padding: 32px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-}
-
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close-modal:hover {
-    color: var(--text-black);
-}
-
 /* ================== RESPONSIVE DESIGN ================== */
+
+/* Laptop / Small Desktop (1366px) */
+@media (max-width: 1366px) {
+
+    .navbar,
+    .hero,
+    .hero .container,
+    .logo-strip,
+    .footer-logo,
+    .footer-content {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .hero {
+        padding: 60px 40px;
+    }
+
+    .hero .container {
+        padding: 0 40px;
+    }
+
+    .logo-strip {
+        padding: 40px 40px;
+    }
+
+    .projects-section,
+    .recommendations-section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .footer-logo {
+        padding: 0 40px;
+    }
+
+    .footer-content {
+        padding: 0 40px 45px;
+    }
+}
 
 /* Tablet and below (1024px) */
 @media (max-width: 1024px) {
@@ -727,6 +800,25 @@ header {
 
     .navbar {
         padding: 20px 40px;
+        gap: 20px;
+        /* Ensure space between logo and nav */
+    }
+
+    .logo {
+        flex-shrink: 0;
+        /* Prevent logo shrinking */
+    }
+
+    .nav-links {
+        gap: 15px;
+        /* Reduce gap between links */
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+        /* Reduce link padding */
+        font-size: 14px;
+        /* Slightly smaller text */
     }
 
     .hero {
@@ -765,6 +857,37 @@ header {
         grid-template-columns: 1fr 1fr;
         padding: 0 40px 50px;
         gap: 40px;
+    }
+
+    .copyright {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .copyright p {
+        justify-content: center;
+    }
+
+    /* Fix Recommendation Card Text for Tablet (1024px) */
+    .carousel-slide {
+        padding: 0 10px;
+    }
+
+    .recommendation-card {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .recommendation-card p {
+        font-size: 14px;
+        line-height: 22px;
+        width: auto;
+        /* Allow natural width */
+        margin-bottom: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
@@ -825,16 +948,63 @@ header {
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        justify-items: center;
+        /* Center the card in the column */
+    }
+
+    .project-card {
+        width: 100%;
+        /* Allow scaling down */
+        max-width: 385px;
+        /* Maintain design width */
+    }
+
+    .project-card img {
+        width: 100%;
+        /* Ensure image scales with card */
     }
 
     /* Carousel - show 1 card */
     .carousel-slide {
-        min-width: 100%;
-        padding: 0 20px;
+        min-width: 0;
+        width: 100%;
+        flex: 0 0 100%;
+        /* Safer for single item view */
+        padding: 0 10px;
     }
 
     .recommendation-card {
         max-width: 100%;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        /* Ensure flexibility */
+        min-height: auto;
+        display: block;
+        /* Ensure standard blocking */
+        padding: 20px 15px 25px;
+        box-sizing: border-box;
+    }
+
+    .recommendation-card p {
+        font-size: 14px;
+        line-height: 22px;
+        width: auto;
+        /* Allow natural width */
+        margin-bottom: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    .recommendation-card .profile .info h4 {
+        font-size: 16px;
+        word-wrap: break-word;
+    }
+
+    .recommendation-card .profile .info span {
+        font-size: 13px;
+        word-wrap: break-word;
     }
 
     /* Contact */
@@ -863,6 +1033,8 @@ header {
     /* Footer */
     .footer-logo {
         padding: 0 20px;
+        text-align: center;
+        align-items: center;
     }
 
     .footer-content {
@@ -880,32 +1052,78 @@ header {
     .social-links {
         align-items: center;
     }
+
+    .rating-badge img {
+        margin: 0 auto 5px auto;
+    }
 }
 
 /* Mobile (480px and below) - Stack navbar vertically */
 @media (max-width: 480px) {
 
-    /* Navbar - stack vertically */
+    /* Navbar - Mobile Menu */
     .navbar {
-        flex-direction: column;
-        padding: 12px 15px;
-        gap: 12px;
+        height: 60px;
+        /* Fixed height for navbar */
+        padding: 0 20px;
+        flex-direction: row;
+        /* Horizontal layout */
+        justify-content: space-between;
+        /* Space out logo and hamburger */
+        align-items: center;
+        position: relative;
     }
 
-    .logo-icon {
-        height: 35px;
+    .hamburger-menu {
+        display: flex;
+        /* Show hamburger on mobile */
+    }
+
+    /* Transform hamburger to X when active */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center logo */
     }
 
     .nav-links {
+        display: none;
+        /* Hide by default */
+        position: absolute;
+        top: 60px;
+        /* Below navbar */
+        left: 0;
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 6px;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+        /* Show when active */
     }
 
     .nav-links a {
-        font-size: 11px;
-        padding: 5px 6px;
+        font-size: 16px;
+        padding: 15px 0;
+        display: block;
+        width: 100%;
     }
 
     /* Hero */
@@ -972,10 +1190,13 @@ header {
     /* Footer */
     .footer-logo {
         padding: 0 15px;
+        text-align: center;
+        align-items: center;
     }
 
     .footer-logo img {
         height: 40px;
+        margin: 0 auto;
     }
 
     .footer-content {
@@ -989,5 +1210,40 @@ header {
 
     .footer-col ul li a {
         font-size: 14px;
+    }
+
+    .copyright {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .copyright p {
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    /* Fix Recommendation Card Text on Mobile */
+    .carousel-slide {
+        padding: 0 10px;
+    }
+
+    .recommendation-card {
+        padding: 20px 15px;
+        min-height: auto;
+        /* Let content dictate height */
+    }
+
+    .recommendation-card p {
+        font-size: 13px;
+        line-height: 20px;
+        width: auto;
+        /* Allow natural width */
+        margin-bottom: 20px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 }

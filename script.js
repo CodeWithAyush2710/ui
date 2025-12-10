@@ -93,36 +93,29 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel(false);
     });
 
-    // --- Modal Logic ---
-    const modal = document.getElementById('project-modal');
-    const closeBtn = document.querySelector('.close-modal');
-    const projectCards = document.querySelectorAll('.project-card');
-    const modalTitle = document.getElementById('modal-title');
-    const modalImage = document.getElementById('modal-image');
-    const modalDesc = document.getElementById('modal-desc');
+    // --- Hamburger Menu Logic ---
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-    projectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const title = card.querySelector('h3').innerText;
-            const imgSrc = card.querySelector('img').src;
-            const desc = card.querySelector('p').innerText;
-
-            modalTitle.innerText = title;
-            modalImage.src = imgSrc;
-            modalDesc.innerText = desc;
-
-            modal.style.display = 'block';
-        });
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
     });
 
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target == modal) {
-            modal.style.display = 'none';
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
         }
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
     });
 
 });
