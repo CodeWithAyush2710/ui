@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Srivastava - Front-end Developer</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img class="logo-icon" src="./assets/logo/Logo.svg" alt="Logo" > <!-- Placeholder for logo -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>I'm Ayush Srivastava <span class="highlight">Front-end</span> Developer</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</p>
+                    <button class="btn btn-primary" id="hire-me-btn">HIRE ME <span class="arrow">➔</span></button>
+                </div>
+                <div class="hero-image">
+                    <img src="./assets/hero-illustration.png" alt="Developer Illustration">
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project Cards will be inserted here -->
+                     <!-- Example Card Structure -->
+                     <div class="project-card">
+                        <img src="./assets/project/Image.png" alt="Project 1">
+                        <div class="card-body">
+                            <h3>How To Make Flyer Design</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sed lorem ipsum...</p>
+                            <div class="tags">
+                                <span>Typescript</span><span>ReactJs</span><span>NextJs</span><span>CSS</span><span>HTML</span><span>MongoDB</span>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="project-card">
+                        <img src="./assets/project/Image-1.png" alt="Project 2">
+                        <div class="card-body">
+                            <h3>How To Make Flyer Design</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sed lorem ipsum...</p>
+                            <div class="tags">
+                                <span>Typescript</span><span>ReactJs</span><span>NextJs</span><span>CSS</span><span>HTML</span><span>MongoDB</span>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="project-card">
+                        <img src="./assets/project/Image-2.png" alt="Project 3">
+                        <div class="card-body">
+                            <h3>How To Make Flyer Design</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sed lorem ipsum...</p>
+                            <div class="tags">
+                                <span>Typescript</span><span>ReactJs</span><span>NextJs</span><span>CSS</span><span>HTML</span><span>MongoDB</span>
+                            </div>
+                        </div>
+                     </div>
+                      <div class="project-card">
+                        <img src="./assets/project/Image-3.png" alt="Project 4">
+                        <div class="card-body">
+                            <h3>How To Make Flyer Design</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sed lorem ipsum...</p>
+                            <div class="tags">
+                                <span>Typescript</span><span>ReactJs</span><span>NextJs</span><span>CSS</span><span>HTML</span><span>MongoDB</span>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="project-card">
+                        <img src="./assets/project/Image-4.png" alt="Project 5">
+                        <div class="card-body">
+                            <h3>How To Make Flyer Design</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sed lorem ipsum...</p>
+                            <div class="tags">
+                                <span>Typescript</span><span>ReactJs</span><span>NextJs</span><span>CSS</span><span>HTML</span><span>MongoDB</span>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="project-card">
+                        <img src="./assets/project/Image-5.png" alt="Project 6">
+                        <div class="card-body">
+                            <h3>How To Make Flyer Design</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sed lorem ipsum...</p>
+                            <div class="tags">
+                                <span>Typescript</span><span>ReactJs</span><span>NextJs</span><span>CSS</span><span>HTML</span><span>MongoDB</span>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="recommendations-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recommendations</h2>
+                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <!-- Cloned last cards for seamless loop -->
+                            <li class="carousel-slide clone">
+                                <div class="recommendation-card">
+                                    <div class="stars">★★★★★</div>
+                                    <h3>Great Quality!</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi.</p>
+                                    <div class="profile">
+                                        <img src="./assets/profile/Profile-2.png" alt="Talan Westervelt">
+                                        <div class="info">
+                                            <h4>Talan Westervelt</h4>
+                                            <span>Business Man</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <!-- Original cards -->
+                            <li class="carousel-slide">
+                                <div class="recommendation-card">
+                                    <div class="stars">★★★★★</div>
+                                    <h3>Great Quality!</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi.</p>
+                                    <div class="profile">
+                                        <img src="./assets/profile/Profile.png" alt="James Gouse">
+                                        <div class="info">
+                                            <h4>James Gouse</h4>
+                                            <span>Graphic Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="carousel-slide">
+                                <div class="recommendation-card">
+                                    <div class="stars">★★★★★</div>
+                                    <h3>Amazing Work!</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi.</p>
+                                    <div class="profile">
+                                        <img src="./assets/profile/Profile-1.png" alt="Tiana Philips">
+                                        <div class="info">
+                                            <h4>Tiana Philips</h4>
+                                            <span>Photographer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="carousel-slide">
+                                <div class="recommendation-card">
+                                    <div class="stars">★★★★★</div>
+                                    <h3>Great Quality!</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi.</p>
+                                    <div class="profile">
+                                        <img src="./assets/profile/Profile-2.png" alt="Talan Westervelt">
+                                        <div class="info">
+                                            <h4>Talan Westervelt</h4>
+                                            <span>Business Man</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <!-- Cloned first cards for seamless loop -->
+                            <li class="carousel-slide clone">
+                                <div class="recommendation-card">
+                                    <div class="stars">★★★★★</div>
+                                    <h3>Great Quality!</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi.</p>
+                                    <div class="profile">
+                                        <img src="./assets/profile/Profile.png" alt="James Gouse">
+                                        <div class="info">
+                                            <h4>James Gouse</h4>
+                                            <span>Graphic Designer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="carousel-indicator current-slide"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+               <!-- Layout: Form Left, Info Right -->
+               <div class="contact-layout">
+                   <div class="contact-form-wrapper">
+                       <h2>Leave ME Your Info</h2>
+                       <form class="contact-form">
+                           <div class="form-group">
+                               <label for="name">Your Full Name ( Required)</label>
+                               <input type="text" id="name" required>
+                           </div>
+                           <div class="form-group">
+                               <label for="email">Your Email ( Required)</label>
+                               <input type="email" id="email" required>
+                           </div>
+                           <div class="form-group">
+                               <label for="subject">Subject</label>
+                               <input type="text" id="subject">
+                           </div>
+                           <div class="form-group">
+                               <label for="message">Your Message</label>
+                               <textarea id="message" rows="6"></textarea>
+                           </div>
+                           <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                       </form>
+                   </div>
+                   
+                   <div class="contact-info-wrapper">
+                       <h2>Contact Information</h2>
+                       
+                       <div class="info-card">
+                            <div class="icon-circle" >
+                                <img src="./assets/icon/location.svg" alt="location">
+                            </div> 
+                            <div class="info-details">
+                                <div class="info-row"><span>Country:</span> <span>Bangladesh</span></div>
+                                <div class="info-row"><span>City:</span> <span>Dhaka</span></div>
+                                <div class="info-row"><span>Street:</span> <span>35 vhatara, Badda</span></div>
+                            </div>
+                       </div>
+
+                       <div class="info-card">
+                            <div class="icon-circle">
+                                <img src="./assets/icon/mail.svg" alt="location">
+                            </div>
+                            <div class="info-details">
+                                <div class="info-row"><span>Email:</span> <span>youremail@gmail.com</span></div>
+                                <div class="info-row"><span>Skype:</span> <span>@yourusername</span></div>
+                                <div class="info-row"><span>Telegram:</span> <span>@yourusername</span></div>
+                            </div>
+                       </div>
+
+                       <div class="info-card">
+                            <div class="icon-circle">
+                                <img src="./assets/icon/Mobile.svg" alt="location">
+                            </div>
+                            <div class="info-details">
+                                <div class="info-row"><span>Support Services:</span> <span>15369</span></div>
+                                <div class="info-row"><span>Office:</span> <span>+58 (021)356 587 235</span></div>
+                                <div class="info-row"><span>Personal:</span> <span>+58 (021)356 587 235</span></div>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </section>
+        
+        <!-- Logo Strip -->
+        <div class="logo-strip">
+             <!-- Placeholders -->
+             <img src="./assets/logo/Frame.svg" alt="Company Logo" class="partner-logo">
+             <img src="./assets/logo/Frame-1.svg" alt="Company Logo" class="partner-logo">
+             <img src="./assets/logo/Frame-2.svg" alt="Company Logo" class="partner-logo">
+             <img src="./assets/logo/Frame-3.svg" alt="Company Logo" class="partner-logo">
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="./assets/logo/Logo.svg" alt="Logo" >
+        </div>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <div class="ratings">
+                    <div class="rating-badge">
+                    <img src="./assets/logo/Rectangle 97.svg" alt="">
+                    4.5/5 Rating On Lorem</div>
+                    <div class="rating-badge">
+                    <img src="./assets/logo/Group 270.svg" alt="">
+                    9/10 Rating On Ipsum</div>
+                    <div class="rating-badge">
+                    <img src="./assets/logo/Rectangle 100.svg" alt="">
+                    4.5/5 Rating On Dorel</div>
+                     
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#recommendations">Recommendations</a></li>
+                </ul>
+            </div>
+             <div class="footer-col">
+                <h4>Portfolio</h4>
+                <ul>
+                    <li><a href="#">Frontend Development</a></li>
+                    <li><a href="#">Backend Development</a></li>
+                    <li><a href="#">Website Design</a></li>
+                    <li><a href="#">Machine Learning</a></li>
+                    <li><a href="#">Problem Solving & DSA</a></li>
+                </ul>
+            </div>
+             <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank">
+                        <img src="./assets/icon/LinkedIn.svg" alt="Linkedin">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                        <img src="./assets/icon/Instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                        <img src="./assets/icon/Facebook.svg" alt="Facebook">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Copyright, All Right Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Project Details</h2>
+            <img id="modal-image" src="" alt="Project Image">
+            <p id="modal-desc">Detailed project description goes here.</p>
+            <div class="modal-tags" id="modal-tags"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
