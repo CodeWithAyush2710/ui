@@ -118,4 +118,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Modal Logic ---
+    const modal = document.getElementById('project-modal');
+    const closeBtn = document.querySelector('.close-modal');
+    const projectCards = document.querySelectorAll('.project-card');
+    const modalTitle = document.getElementById('modal-title');
+    const modalImage = document.getElementById('modal-image');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalTags = document.getElementById('modal-tags');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Get project data from clicked card
+            const title = card.querySelector('h3').innerText;
+            const imgSrc = card.querySelector('img').src;
+            const desc = card.querySelector('p').innerText;
+            const tags = card.querySelectorAll('.tags span');
+
+            // Populate modal with data
+            modalTitle.innerText = title;
+            modalImage.src = imgSrc;
+            modalDesc.innerText = desc;
+
+            // Clear and add tags
+            modalTags.innerHTML = '';
+            tags.forEach(tag => {
+                const tagClone = tag.cloneNode(true);
+                modalTags.appendChild(tagClone);
+            });
+
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+    });
+
+    // Close modal on X button click
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
 });
